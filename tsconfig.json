@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+
+      "@app/*": ["./app/*"],
+      "@environments/*": ["./environments/*"],
+      
+      "@configs/*": ["./app/shared/configs/*"],
+      "@directives/*": ["./app/shared/directives/*"],
+      "@interfaces/*": ["./app/shared/interfaces/*"],
+      "@classes/*": ["./app/shared/classes/*"],
+      "@pipes/*": ["./app/shared/pipes/*"],
+      "@components/*": ["./app/shared/components/*"],
+
+      "@services/*": ["./app/core/services/*"],
+      "@guards/*": ["./app/core/guards/*"],
+      "@utils/*": ["./app/core/utils/*"],
+      "@interceptors/*": ["./app/core/interceptors/*"],
+
+      "@reducers/*": ["./app/store/reducers/*"],
+      "@effects/*": ["./app/store/effects/*"],
+      "@actions/*": ["./app/store/actions/*"],
+
+    },
+    "types": [],
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "models": {
+    "id": "Identifiant",
+    "completed": "Terminé",
+    "assignedId": "Assigné à",
+    "description": "Description"
+  },
+  "dataGrid": {
+    "titles": {
+      "ticketList": "Liste des Tickets",
+      "ticketDetails": "Informations"
+    }
+  },
+  "hints": {
+    "search": "Rechercher...",
+    "emptyDataState": "Aucune donnée"
+  },
+  "buttons": {
+    "addTicket": "Ajouter",
+    "save": "Enregistrer",
+    "cancel": "Fermer"
+  }
+}

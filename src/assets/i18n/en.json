@@ -1,0 +1,23 @@
+{
+  "models": {
+    "id": "ID",
+    "completed": "Finished",
+    "assignedId": "Assigned To",
+    "description": "Description"
+  },
+  "dataGrid": {
+    "titles": {
+      "ticketList": "Tickets List",
+      "ticketDetails": "Ticket Details"
+    }
+  },
+  "hints": {
+    "search": "Search...",
+    "emptyDataState": "No Data"
+  },
+  "buttons": {
+    "addTicket": "Add New Ticket",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

@@ -1,0 +1,17 @@
+@import './variables';
+
+html, body { height: 100%; }
+body { 
+    margin: 0;
+    padding: 0;;
+    font-family: $font-family;
+    color: $secondary;
+    font-size: 14px;
+}
+
+:root{
+  --betclic-header-height: #{$header-height};
+  --betclic-header-bg-color: #{$header-bg};
+  --betclic-primary-color: #{$primary};
+  --betclic-secondary: #{$secondary};
+}

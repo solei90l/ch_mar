@@ -1,0 +1,14 @@
+<header class="header container">
+
+    <div class="logo">
+        <img src="assets/images/logo.png" height="50px" alt="BetClic Logo">
+    </div>
+
+    <div class="langWrapper">
+        <span *ngFor="let item of supportedLanguages | enumToArray" (click)="switchLanguage(item.value)" class="lang"
+            [ngClass]="{ 'actif': translateService.currentLang === item.value}">
+            {{ item.value }}
+        </span>
+    </div>
+
+</header>

@@ -1,0 +1,65 @@
+/*
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "types": [],
+    "paths": {
+
+      "@app/*": ["./app/*"],
+      "@environments/*": ["./environments/*"],
+      
+      "@configs/*": ["./app/shared/configs/*"],
+      "@directives/*": ["./app/shared/directives/*"],
+      "@interfaces/*": ["./app/shared/interfaces/*"],
+      "@classes/*": ["./app/shared/classes/*"],
+      "@pipes/*": ["./app/shared/pipes/*"],
+      "@components/*": ["./app/shared/components/*"],
+
+      "@services/*": ["./app/core/services/*"],
+      "@guards/*": ["./app/core/guards/*"],
+      "@utils/*": ["./app/core/utils/*"],
+      "@interceptors/*": ["./app/core/interceptors/*"],
+
+      "@reducers/*": ["./app/store/reducers/*"],
+      "@effects/*": ["./app/store/effects/*"],
+      "@actions/*": ["./app/store/actions/*"],
+
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+}
+*/
+{
+  "extends": "./tsconfig.json",
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

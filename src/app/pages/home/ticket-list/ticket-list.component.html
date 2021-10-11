@@ -1,0 +1,53 @@
+<betclic-header></betclic-header>
+
+<p-toast></p-toast>
+
+<div class="ticketListWrapper">
+    <div class="datagrid">
+        <betclic-data-grid [pageTitle]="pageTitle" [dataSource]="tableData" [globalFilterFields]="globalFilterFields"
+            [pTableInputs]="pTableInputs" [dataGridColumns]="displayedColumns" [loading$]="loading$"
+            [dataGridOptions]="dataGridOptions">
+
+
+            <div *templateKey="'toolBarTemplate'">
+                <button pButton pRipple [label]="'buttons.addTicket' | translate" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="AddNewTicket()"></button>
+            </div>
+
+            <div *templateKey="'ticketCompletedTemplate'; let data">
+                <p-inputSwitch (onChange)="handleCompletedChange($event)" [ngModel]="data.data['completed']"></p-inputSwitch>
+            </div>
+
+            <div *templateKey="'assignedIdTemplate'; let data">
+                <div *ngIf="data.data['assignedId']; then assignedTemplate else notAssignedYetTemplate"></div>
+                <ng-template #assignedTemplate>
+                    {{ findUser(data.data['assignedId']) }}
+                </ng-template>
+                <ng-template #notAssignedYetTemplate>
+                    <p-dropdown [options]="users" (onChange)="onUserSelectionChange(data.data, $event.value)" optionLabel="name" optionValue="id"></p-dropdown>
+                </ng-template>
+            </div>
+
+            <div *templateKey="'actionRowTemplate'; let data">
+                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-info p-mr-2" (click)="editTicket(data.data)"></button>
+            </div>
+
+        </betclic-data-grid>
+    </div>
+</div>
+
+<p-dialog [(visible)]="ticketDialogVisibility" [style]="{width: '450px'}" [header]="'dataGrid.titles.ticketDetails' | translate" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="description">Description</label>
+            <textarea id="description" pInputTextarea [(ngModel)]="selectedTicket.description" required autofocus rows="3" cols="20"></textarea>
+            <small class="p-invalid" *ngIf="!selectedTicket.description">Description required.</small>
+        </div>
+    </ng-template>
+    
+    <ng-template pTemplate="footer">
+        <button pButton pRipple [label]="'buttons.cancel' | translate" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple [label]="'buttons.save' | translate" icon="pi pi-check" class="p-button-text" (click)="save()"></button>
+    </ng-template>
+</p-dialog>
+
+<!-- <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog> -->

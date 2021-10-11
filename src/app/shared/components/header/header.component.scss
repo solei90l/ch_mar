@@ -1,0 +1,24 @@
+
+.header {
+    background-color: var(--betclic-header-bg-color);
+    min-height: var(--betclic-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .5em;
+    padding-bottom: .5em;
+
+    .langWrapper {
+        .lang {
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: large;
+            margin-right: 5px;
+            &.actif, &:hover {
+                border-bottom-width: 80%;
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+}

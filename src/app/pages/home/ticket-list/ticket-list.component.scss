@@ -1,0 +1,15 @@
+.ticketListWrapper {
+    min-height: 100%;
+    .mapWrapper {
+        height: 100%;
+        .map {
+            height: 100%;
+        }
+    }
+}
+
+::ng-deep {
+    p-dropdown {
+        z-index: 9999
+    }
+}
